@@ -8,6 +8,6 @@ class ShopViewModelFactory(
     private val repository: ShopRepository
 ): ViewModelProvider.NewInstanceFactory() {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-        return ShopViewModel(repository) as T
+        return ShopListViewModel(repository) as T
     }
 }
