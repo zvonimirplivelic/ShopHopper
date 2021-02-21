@@ -13,7 +13,7 @@ data class ShopItem(
     @ColumnInfo(name = "item_quantity")
     var quantity: Int,
     @ColumnInfo(name = "item_priority")
-    var priority: Int
+    var priority: String
 ) {
     @PrimaryKey(autoGenerate = true)
     var id: Int? = null
