@@ -3,12 +3,12 @@ package com.zvonimirplivelic.shophopper.ui
 import android.content.Context
 import android.os.Bundle
 import android.view.View
-import android.view.Window
 import android.widget.*
 import androidx.appcompat.app.AppCompatDialog
 import com.zvonimirplivelic.shophopper.R
 import com.zvonimirplivelic.shophopper.db.model.ShopItem
 import kotlinx.android.synthetic.main.dialog_add_shop_item.*
+import java.lang.NumberFormatException
 
 class AddShopItemDialog(
     context: Context,
@@ -18,7 +18,6 @@ class AddShopItemDialog(
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        requestWindowFeature(Window.FEATURE_NO_TITLE)
         setContentView(R.layout.dialog_add_shop_item)
         setTitle("Add shop item")
 
@@ -36,22 +35,27 @@ class AddShopItemDialog(
 
         ibConfirm.setOnClickListener {
             val name = etItemName.text.toString()
-            val quantity = etItemQuantity.text.toString().toInt()
             val description = etItemDescription.text.toString()
-
+            val spinnerValue: String = spinner.selectedItem.toString()
+            var quantity = etItemQuantity.text.toString()
 
             if (name.isEmpty() ||
-                description.isEmpty() ||
-                quantity.equals("")
+                description.isEmpty()
             ) {
-                Toast.makeText(context, "Please fill required information", Toast.LENGTH_SHORT)
-                    .show()
+                Toast.makeText(
+                    context,
+                    "Please fill required information",
+                    Toast.LENGTH_SHORT
+                ).show()
+
                 return@setOnClickListener
+            } else if (quantity.isEmpty()) {
+                Toast.makeText(context, "Quantity value isn't set. Default value is 0", Toast.LENGTH_SHORT).show()
+                quantity = "0"
             }
 
-            val spinnerValue: String = spinner.selectedItem.toString()
+            val item = ShopItem(name, description, quantity.toInt(), spinnerValue)
 
-            val item = ShopItem(name, description, quantity, spinnerValue)
             addDialogListener.onAddButtonClicked(item)
             dismiss()
         }
@@ -65,7 +69,6 @@ class AddShopItemDialog(
         parent?.getItemAtPosition(position)
     }
 
-    override fun onNothingSelected(parent: AdapterView<*>?) {
+    override fun onNothingSelected(parent: AdapterView<*>?) {}
 
-    }
 }

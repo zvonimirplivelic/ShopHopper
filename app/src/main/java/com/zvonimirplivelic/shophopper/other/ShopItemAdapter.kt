@@ -28,7 +28,7 @@ class ShopItemAdapter(
         val currentItem = shopItems[position]
         holder.itemView.tvItemName.text = currentItem.name
         holder.itemView.tvItemDescription.text = currentItem.description
-        holder.itemView.tvItemPriority.text = currentItem.priority.toString()
+        holder.itemView.tvItemPriority.text = currentItem.priority
         holder.itemView.tvItemQuantity.text = currentItem.quantity.toString()
 
         holder.itemView.ivDelete.setOnClickListener {

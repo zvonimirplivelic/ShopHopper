@@ -36,6 +36,9 @@ class MainActivity : AppCompatActivity() {
             if (it.isEmpty()) {
                 emptyMessage.visibility = View.VISIBLE
                 ivCart.visibility = View.VISIBLE
+            } else {
+                emptyMessage.visibility = View.GONE
+                ivCart.visibility = View.GONE
             }
         })
 
