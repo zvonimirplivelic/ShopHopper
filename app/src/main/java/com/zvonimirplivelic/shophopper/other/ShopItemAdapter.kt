@@ -1,5 +1,9 @@
 package com.zvonimirplivelic.shophopper.other
 
+import android.app.AlertDialog
+import android.content.Context
+import android.content.DialogInterface
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,11 +12,14 @@ import com.zvonimirplivelic.shophopper.R
 import com.zvonimirplivelic.shophopper.db.model.ShopItem
 import com.zvonimirplivelic.shophopper.ui.ShopListViewModel
 import kotlinx.android.synthetic.main.shop_item.view.*
+import kotlinx.coroutines.NonCancellable.cancel
 
 class ShopItemAdapter(
+    private val context: Context,
     var shopItems: List<ShopItem>,
     private val viewModel: ShopListViewModel
 ) : RecyclerView.Adapter<ShopItemAdapter.ShopItemViewHolder>() {
+    private val TAG = "SIA"
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -28,11 +35,31 @@ class ShopItemAdapter(
         val currentItem = shopItems[position]
         holder.itemView.tvItemName.text = currentItem.name
         holder.itemView.tvItemDescription.text = currentItem.description
-        holder.itemView.tvItemPriority.text = currentItem.priority
-        holder.itemView.tvItemQuantity.text = currentItem.quantity.toString()
+        holder.itemView.tvItemPriority.text = context.getString(R.string.priority_item_string, currentItem.priority)
+        holder.itemView.tvItemQuantity.text = context.getString(R.string.quantity_item_string, currentItem.quantity.toString())
 
         holder.itemView.ivDelete.setOnClickListener {
-            viewModel.delete(currentItem)
+            Log.i(TAG, "onBindViewHolder: clicked")
+            val builder: AlertDialog.Builder? = holder.itemView.ivDelete.context.let {
+                AlertDialog.Builder(it)
+            }.apply {
+                setTitle("Delete item")
+                setMessage("Do you want to delete ${currentItem.name}")
+                setIcon(R.drawable.ic_delete)
+
+                setPositiveButton(R.string.yes) { dialog, id ->
+                    viewModel.delete(currentItem)
+                    dialog.dismiss()
+                }
+
+                setNegativeButton(R.string.cancel) { dialog, id -> dialog.cancel() }
+                Log.i(TAG, "onBindViewHolder: inside")
+
+            }
+
+            Log.i(TAG, "onBindViewHolder: passed builder")
+
+            builder?.create()?.show()
         }
 
         holder.itemView.ivPlus.setOnClickListener {

@@ -1,5 +1,6 @@
 package com.zvonimirplivelic.shophopper.ui
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -14,6 +15,7 @@ import com.zvonimirplivelic.shophopper.repository.ShopRepository
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -24,7 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         val viewModel = ViewModelProviders.of(this, factory).get(ShopListViewModel::class.java)
 
-        val adapter = ShopItemAdapter(listOf(), viewModel)
+        val adapter = ShopItemAdapter(applicationContext, listOf(), viewModel)
 
         rvShopItemList.layoutManager = LinearLayoutManager(this)
         rvShopItemList.adapter = adapter

@@ -18,14 +18,16 @@
 
     <TextView
         android:id="@+id/tvItemDescription"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
         android:maxLength="40"
         android:maxLines="2"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@id/ivDelete"
+        app:layout_constraintEnd_toStartOf="@+id/ivMinus"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvItemName"
         tools:text="Description" />
 
@@ -34,23 +36,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
-        android:text="Priority: "
+        android:text="@string/priority_item_string"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@id/tvItemDescription"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvItemName" />
+        app:layout_constraintBottom_toTopOf="@id/ivPlus"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvItemQuantity" />
 
     <TextView
         android:id="@+id/tvItemQuantity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:text="@string/quantity_item_string"
         android:textSize="32sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/ivMinus"
-        app:layout_constraintEnd_toEndOf="@+id/ivPlus"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/ivMinus"
         app:layout_constraintTop_toTopOf="parent"
         tools:text="qty" />
 
@@ -70,7 +71,6 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="8dp"
         android:src="@drawable/ic_minus"
         app:layout_constraintBottom_toBottomOf="@+id/ivDelete"
         app:layout_constraintRight_toLeftOf="@id/ivPlus"
@@ -81,7 +81,6 @@
         android:layout_width="48dp"
         android:layout_height="48dp"
         android:layout_marginRight="4dp"
-        android:layout_marginBottom="8dp"
         android:src="@drawable/ic_plus"
         app:layout_constraintBottom_toBottomOf="@+id/ivDelete"
         app:layout_constraintRight_toRightOf="parent"
