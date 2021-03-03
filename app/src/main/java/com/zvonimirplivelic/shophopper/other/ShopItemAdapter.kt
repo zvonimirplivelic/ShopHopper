@@ -19,7 +19,6 @@ class ShopItemAdapter(
     var shopItems: List<ShopItem>,
     private val viewModel: ShopListViewModel
 ) : RecyclerView.Adapter<ShopItemAdapter.ShopItemViewHolder>() {
-    private val TAG = "SIA"
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -33,18 +32,19 @@ class ShopItemAdapter(
     override fun onBindViewHolder(holder: ShopItemAdapter.ShopItemViewHolder, position: Int) {
 
         val currentItem = shopItems[position]
-        holder.itemView.tvItemName.text = currentItem.name
-        holder.itemView.tvItemDescription.text = currentItem.description
+        holder.itemView.tvItemName.text = context.getString(R.string.name_item_string, currentItem.name)
+        holder.itemView.tvItemDescription.text = context.getString(R.string.description_item_string, currentItem.description)
         holder.itemView.tvItemPriority.text = context.getString(R.string.priority_item_string, currentItem.priority)
         holder.itemView.tvItemQuantity.text = context.getString(R.string.quantity_item_string, currentItem.quantity.toString())
 
         holder.itemView.ivDelete.setOnClickListener {
-            Log.i(TAG, "onBindViewHolder: clicked")
-            val builder: AlertDialog.Builder? = holder.itemView.ivDelete.context.let {
+
+            val builder: AlertDialog.Builder = holder.itemView.ivDelete.context.let {
                 AlertDialog.Builder(it)
             }.apply {
-                setTitle("Delete item")
-                setMessage("Do you want to delete ${currentItem.name}")
+
+                setTitle(context.getString(R.string.delete_item_dialog))
+                setMessage(context.getString(R.string.delete_dialog_message, currentItem.name))
                 setIcon(R.drawable.ic_delete)
 
                 setPositiveButton(R.string.yes) { dialog, id ->
@@ -53,11 +53,7 @@ class ShopItemAdapter(
                 }
 
                 setNegativeButton(R.string.cancel) { dialog, id -> dialog.cancel() }
-                Log.i(TAG, "onBindViewHolder: inside")
-
             }
-
-            Log.i(TAG, "onBindViewHolder: passed builder")
 
             builder?.create()?.show()
         }

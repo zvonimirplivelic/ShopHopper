@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="8dp"
+    android:padding="@dimen/padding_default"
     tools:context=".ui.MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
@@ -12,18 +12,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/ivCart"
-        android:layout_width="320dp"
-        android:layout_height="320dp"
-        android:layout_margin="16dp"
-        android:paddingStart="30dp"
+        style="@style/EmptyListImage"
         android:src="@drawable/ic_cart_add"
         app:layout_constraintBottom_toTopOf="@id/emptyMessage"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -34,13 +29,8 @@
 
     <TextView
         android:id="@+id/emptyMessage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:paddingTop="16dp"
-        android:text="Add items by clicking +"
-        android:textAlignment="center"
-        android:textSize="24sp"
+        style="@style/EmptyListMessage"
+        android:text="@string/empty_list_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -48,11 +38,10 @@
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAddItem"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:contentDescription="Add item button"
+        style="@style/FloatingActionButton"
+        android:backgroundTint="@color/colorAccent"
         android:src="@drawable/ic_add"
+        app:borderWidth="@dimen/fab_border_width"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
 

@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatDialog
 import com.zvonimirplivelic.shophopper.R
 import com.zvonimirplivelic.shophopper.db.model.ShopItem
 import kotlinx.android.synthetic.main.dialog_add_shop_item.*
-import java.lang.NumberFormatException
 
 class AddShopItemDialog(
     context: Context,

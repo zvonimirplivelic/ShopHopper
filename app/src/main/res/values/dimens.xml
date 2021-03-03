@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+<!--Text Size    -->
+    <dimen name="text_size_default">20sp</dimen>
+
+<!--Margins    -->
+    <dimen name="margin_default">16dp</dimen>
+    <dimen name="margin_small">8dp</dimen>
+    <dimen name="margin_xsmall">4dp</dimen>
+
+<!--Button Size    -->
+    <dimen name="button_size">48dp</dimen>
+
+<!--Padding    -->
+    <dimen name="padding_default">8dp</dimen>
+    <dimen name="padding_large">16dp</dimen>
+    <dimen name="padding_xlarge">32dp</dimen>
+    <dimen name="card_corner_radius">16dp</dimen>
+    <dimen name="width_fill_constraint">0dp</dimen>
+    <dimen name="fab_border_width">0dp</dimen>
+</resources>

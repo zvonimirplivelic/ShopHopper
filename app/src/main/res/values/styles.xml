@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="ShopItemButton">
+        <item name="android:layout_width">@dimen/button_size</item>
+        <item name="android:layout_height">@dimen/button_size</item>
+        <item name="android:layout_marginBottom">@dimen/margin_default</item>
+    </style>
+
+    <style name="ShopItemTextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/margin_default</item>
+        <item name="android:textSize">@dimen/text_size_default</item>
+    </style>
+
+    <style name="AddItemDialogEditText">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/margin_default</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textColorHint">@color/grey</item>
+    </style>
+
+    <style name="AddItemDialogSpinnerLabel">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/margin_default</item>
+        <item name="android:labelFor">@id/spinnerPriority</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textColorHint">@color/grey</item>
+        <item name="android:textSize">@dimen/text_size_default</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="AddItemDialogSpinner">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/margin_default</item>
+        <item name="android:color">@color/black</item>
+        <item name="android:labelFor">@id/spinnerPriority</item>
+        <item name="android:padding">8dp</item>
+        <item name="android:spinnerMode">dropdown</item>
+        <item name="android:textColorHint">@color/grey</item>
+    </style>
+
+    <style name="AddItemDialogButton">
+        <item name="android:layout_width">@dimen/width_fill_constraint</item>
+        <item name="android:layout_height">@dimen/button_size</item>
+        <item name="android:layout_margin">@dimen/margin_default</item>
+    </style>
+
+    <style name="FloatingActionButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/margin_default</item>
+        <item name="android:contentDescription">Add item button</item>
+    </style>
+
+    <style name="EmptyListMessage">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">@dimen/margin_default</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:paddingTop">@dimen/padding_large</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="EmptyListImage">
+        <item name="android:layout_width">320dp</item>
+        <item name="android:layout_height">320dp</item>
+        <item name="android:layout_margin">@dimen/margin_default</item>
+        <item name="android:paddingStart">@dimen/padding_xlarge</item>
+    </style>
+</resources>

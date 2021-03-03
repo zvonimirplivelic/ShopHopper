@@ -1,8 +1,20 @@
 <resources>
     <string name="app_name">ShopHopper</string>
+
+<!-- List item strings   -->
+    <string name="name_item_string">Name: %s</string>
+    <string name="quantity_item_string">Quantity: %s</string>
+    <string name="description_item_string">Description: %s</string>
+    <string name="priority_item_string">Priority: %s</string>
+
+<!-- Dialog strings   -->
     <string name="ok">Ok</string>
     <string name="cancel">Cancel</string>
     <string name="yes">Yes</string>
-    <string name="priority_item_string">Priority: %s</string>
-    <string name="quantity_item_string">Quantity: %s</string>
+    <string name="delete_item_dialog">Delete item</string>
+    <string name="delete_dialog_message">Do you want to delete %s</string>
+
+<!--Empty list strings    -->
+    <string name="empty_list_text">Add items by clicking +</string>
+
 </resources>

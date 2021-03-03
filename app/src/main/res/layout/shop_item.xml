@@ -1,88 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="8dp">
+    android:layout_margin="@dimen/margin_small"
+    app:cardCornerRadius="@dimen/card_corner_radius">
 
-    <TextView
-        android:id="@+id/tvItemName"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:textSize="24sp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="Name" />
+        android:background="@color/colorPrimary">
 
-    <TextView
-        android:id="@+id/tvItemDescription"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:maxLength="40"
-        android:maxLines="2"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@id/ivDelete"
-        app:layout_constraintEnd_toStartOf="@+id/ivMinus"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvItemName"
-        tools:text="Description" />
+        <TextView
+            android:id="@+id/tvItemName"
+            style="@style/ShopItemTextView"
+            android:text="@string/name_item_string"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/tvItemPriority"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="@string/priority_item_string"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@id/ivPlus"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvItemQuantity" />
+        <TextView
+            android:id="@+id/tvItemDescription"
+            style="@style/ShopItemTextView"
+            android:layout_width="@dimen/width_fill_constraint"
+            android:maxLength="40"
+            android:maxLines="2"
+            app:layout_constraintBottom_toTopOf="@id/ivDelete"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvItemName" />
 
-    <TextView
-        android:id="@+id/tvItemQuantity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:text="@string/quantity_item_string"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="qty" />
+        <TextView
+            android:id="@+id/tvItemPriority"
+            style="@style/ShopItemTextView"
+            android:text="@string/priority_item_string"
+            app:layout_constraintBottom_toBottomOf="@id/tvItemName"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tvItemName" />
 
-    <ImageView
-        android:id="@+id/ivDelete"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginBottom="8dp"
-        android:src="@drawable/ic_delete"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/tvItemDescription" />
+        <ImageView
+            android:id="@+id/ivDelete"
+            style="@style/ShopItemButton"
+            android:layout_marginHorizontal="@dimen/margin_xsmall"
+            android:layout_marginStart="@dimen/margin_default"
+            android:src="@drawable/ic_delete"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/ivMinus"
+            app:layout_constraintTop_toBottomOf="@id/tvItemDescription" />
 
-    <ImageView
-        android:id="@+id/ivMinus"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginRight="16dp"
-        android:src="@drawable/ic_minus"
-        app:layout_constraintBottom_toBottomOf="@+id/ivDelete"
-        app:layout_constraintRight_toLeftOf="@id/ivPlus"
-        app:layout_constraintTop_toTopOf="@id/ivDelete" />
+        <ImageView
+            android:id="@+id/ivMinus"
+            style="@style/ShopItemButton"
+            android:layout_marginHorizontal="@dimen/margin_xsmall"
+            android:src="@drawable/ic_minus"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/ivDelete"
+            app:layout_constraintRight_toLeftOf="@id/ivPlus"
+            app:layout_constraintTop_toTopOf="@id/ivDelete" />
 
-    <ImageView
-        android:id="@+id/ivPlus"
-        android:layout_width="48dp"
-        android:layout_height="48dp"
-        android:layout_marginRight="4dp"
-        android:src="@drawable/ic_plus"
-        app:layout_constraintBottom_toBottomOf="@+id/ivDelete"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ivDelete" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/ivPlus"
+            style="@style/ShopItemButton"
+            android:layout_marginHorizontal="@dimen/margin_xsmall"
+            android:src="@drawable/ic_plus"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toRightOf="@id/ivMinus"
+            app:layout_constraintRight_toLeftOf="@id/tvItemQuantity"
+            app:layout_constraintTop_toTopOf="@id/ivMinus" />
+
+        <TextView
+            android:id="@+id/tvItemQuantity"
+            style="@style/ShopItemTextView"
+            android:text="@string/quantity_item_string"
+            app:layout_constraintBottom_toBottomOf="@id/ivPlus"
+            app:layout_constraintLeft_toRightOf="@id/ivPlus"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="@id/ivPlus" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

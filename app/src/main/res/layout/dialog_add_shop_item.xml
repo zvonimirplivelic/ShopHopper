@@ -1,101 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:id="@+id/addItemDialog"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="300dp"
+    android:id="@+id/addItemDialog"
+    android:layout_width="250dp"
     android:layout_height="wrap_content"
-    android:background="#bbbbbb"
-    android:padding="8dp">
+    android:background="@color/colorAccent"
+    android:padding="@dimen/padding_default">
 
     <EditText
         android:id="@+id/etItemName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
         android:hint="Name: "
         android:inputType="text"
         android:maxLength="16"
+        app:layout_constraintBottom_toTopOf="@id/etItemQuantity"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toLeftOf="@id/etItemQuantity"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/AddItemDialogEditText" />
 
     <EditText
         android:id="@+id/etItemQuantity"
-        android:layout_width="85dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
         android:hint="Quantity: "
         android:inputType="number"
         android:maxLength="2"
-        app:layout_constraintLeft_toRightOf="@id/etItemName"
+        app:layout_constraintBottom_toTopOf="@id/etItemDescription"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@id/etItemName"
+        style="@style/AddItemDialogEditText" />
 
     <EditText
         android:id="@+id/etItemDescription"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:hint="Short description"
+        android:hint="Short description:"
+        android:maxLength="40"
+        app:layout_constraintBottom_toTopOf="@id/spinnerPriority"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etItemName" />
+        app:layout_constraintTop_toBottomOf="@id/etItemQuantity"
+        style="@style/AddItemDialogEditText" />
 
     <TextView
         android:id="@+id/spinnerLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:labelFor="@id/spinnerPriority"
-        android:paddingTop="8dp"
-        android:paddingEnd="8dp"
-        android:paddingBottom="8dp"
         android:text="Priority: "
-        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@+id/spinnerPriority"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/etItemDescription" />
+        app:layout_constraintTop_toBottomOf="@id/etItemDescription"
+        style="@style/AddItemDialogSpinnerLabel" />
 
     <Spinner
         android:id="@+id/spinnerPriority"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:labelFor="@id/spinnerPriority"
-        android:padding="8dp"
-        android:spinnerMode="dropdown"
         app:layout_constraintBottom_toBottomOf="@id/spinnerLabel"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/spinnerLabel"
-        app:layout_constraintTop_toTopOf="@id/spinnerLabel" />
+        app:layout_constraintTop_toTopOf="@id/spinnerLabel"
+        style="@style/AddItemDialogSpinner" />
 
     <ImageButton
         android:id="@+id/ibCancel"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_margin="16dp"
         android:background="@android:color/holo_red_dark"
         android:src="@drawable/ic_cancel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/ibConfirm"
-        app:layout_constraintTop_toBottomOf="@id/spinnerPriority" />
+        app:layout_constraintTop_toBottomOf="@id/spinnerPriority"
+        style="@style/AddItemDialogButton" />
 
 
     <ImageButton
         android:id="@+id/ibConfirm"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_margin="16dp"
         android:background="@android:color/holo_green_dark"
         android:src="@drawable/ic_check"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@id/ibCancel"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/spinnerPriority" />
-
-
+        app:layout_constraintTop_toBottomOf="@id/spinnerPriority"
+        style="@style/AddItemDialogButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>
