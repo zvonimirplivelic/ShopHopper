@@ -9,7 +9,7 @@
 
     <EditText
         android:id="@+id/etItemName"
-        android:hint="Name: "
+        android:hint="@string/et_name_hint"
         android:inputType="text"
         android:maxLength="16"
         app:layout_constraintBottom_toTopOf="@id/etItemQuantity"
@@ -20,7 +20,7 @@
 
     <EditText
         android:id="@+id/etItemQuantity"
-        android:hint="Quantity: "
+        android:hint="@string/et_quantity_hint"
         android:inputType="number"
         android:maxLength="2"
         app:layout_constraintBottom_toTopOf="@id/etItemDescription"
@@ -31,7 +31,7 @@
 
     <EditText
         android:id="@+id/etItemDescription"
-        android:hint="Short description:"
+        android:hint="@string/et_description_hint"
         android:maxLength="40"
         app:layout_constraintBottom_toTopOf="@id/spinnerPriority"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -41,7 +41,7 @@
 
     <TextView
         android:id="@+id/spinnerLabel"
-        android:text="Priority: "
+        android:text="@string/et_priority_hint"
         app:layout_constraintEnd_toStartOf="@+id/spinnerPriority"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="packed"

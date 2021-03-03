@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.dialog_add_shop_item.*
 
 class AddShopItemDialog(
     context: Context,
-    var addDialogListener: AddDialogListener
+    private var addDialogListener: AddDialogListener
 ) : AppCompatDialog(context),
     AdapterView.OnItemSelectedListener {
 
@@ -20,7 +20,7 @@ class AddShopItemDialog(
         setContentView(R.layout.dialog_add_shop_item)
         setTitle("Add shop item")
 
-        var spinner: Spinner = spinnerPriority
+        val spinner: Spinner = spinnerPriority
 
         ArrayAdapter.createFromResource(
             context,

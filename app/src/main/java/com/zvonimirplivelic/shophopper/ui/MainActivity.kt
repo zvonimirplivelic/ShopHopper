@@ -1,11 +1,9 @@
 package com.zvonimirplivelic.shophopper.ui
 
-import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
+import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.zvonimirplivelic.shophopper.R
 import com.zvonimirplivelic.shophopper.db.ShopDatabase
@@ -24,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         val repository = ShopRepository(database)
         val factory = ShopViewModelFactory(repository)
 
-        val viewModel = ViewModelProviders.of(this, factory).get(ShopListViewModel::class.java)
+        val viewModel = ViewModelProvider(this, factory).get(ShopListViewModel::class.java)
 
         val adapter = ShopItemAdapter(applicationContext, listOf(), viewModel)
 

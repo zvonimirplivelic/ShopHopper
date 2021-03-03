@@ -2,8 +2,6 @@ package com.zvonimirplivelic.shophopper.other
 
 import android.app.AlertDialog
 import android.content.Context
-import android.content.DialogInterface
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +10,6 @@ import com.zvonimirplivelic.shophopper.R
 import com.zvonimirplivelic.shophopper.db.model.ShopItem
 import com.zvonimirplivelic.shophopper.ui.ShopListViewModel
 import kotlinx.android.synthetic.main.shop_item.view.*
-import kotlinx.coroutines.NonCancellable.cancel
 
 class ShopItemAdapter(
     private val context: Context,
@@ -55,7 +52,7 @@ class ShopItemAdapter(
                 setNegativeButton(R.string.cancel) { dialog, id -> dialog.cancel() }
             }
 
-            builder?.create()?.show()
+            builder.create()?.show()
         }
 
         holder.itemView.ivPlus.setOnClickListener {
