@@ -26,7 +26,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed"
         tools:ignore="RtlSymmetry"
-        android:contentDescription="TODO" />
+        android:contentDescription="@string/empty_list_image_desc" />
 
     <TextView
         android:id="@+id/emptyMessage"
@@ -45,7 +45,7 @@
         app:borderWidth="@dimen/fab_border_width"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:contentDescription="TODO" />
+        android:contentDescription="@string/fab_add_item_button_desc" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

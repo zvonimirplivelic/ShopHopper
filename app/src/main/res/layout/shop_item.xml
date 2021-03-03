@@ -47,7 +47,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@id/ivMinus"
-            app:layout_constraintTop_toBottomOf="@id/tvItemDescription" />
+            app:layout_constraintTop_toBottomOf="@id/tvItemDescription"
+            android:contentDescription="@string/delete_item_button_desc" />
 
         <ImageView
             android:id="@+id/ivMinus"
@@ -57,7 +58,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@id/ivDelete"
             app:layout_constraintRight_toLeftOf="@id/ivPlus"
-            app:layout_constraintTop_toTopOf="@id/ivDelete" />
+            app:layout_constraintTop_toTopOf="@id/ivDelete"
+            android:contentDescription="@string/subtract_item_quantity_button_desc" />
 
         <ImageView
             android:id="@+id/ivPlus"
@@ -67,7 +69,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toRightOf="@id/ivMinus"
             app:layout_constraintRight_toLeftOf="@id/tvItemQuantity"
-            app:layout_constraintTop_toTopOf="@id/ivMinus" />
+            app:layout_constraintTop_toTopOf="@id/ivMinus"
+            android:contentDescription="@string/add_item_quantity_button_desc" />
 
         <TextView
             android:id="@+id/tvItemQuantity"

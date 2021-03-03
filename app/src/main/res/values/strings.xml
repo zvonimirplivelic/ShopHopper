@@ -19,5 +19,12 @@
     <string name="et_quantity_hint">Quantity:</string>
     <string name="et_description_hint">Short description:</string>
     <string name="et_priority_hint">Priority:</string>
+    <string name="fab_add_item_button_desc">Add item button</string>
+    <string name="empty_list_image_desc">Empty shop item list image</string>
+    <string name="cancel_adding_item_button_desc">Cancel adding item button</string>
+    <string name="confirm_adding_item_button_desc">Confirm adding item button</string>
+    <string name="delete_item_button_desc">Delete item button</string>
+    <string name="subtract_item_quantity_button_desc">Subtract item quantity button</string>
+    <string name="add_item_quantity_button_desc">Add item quantity button</string>
 
 </resources>
