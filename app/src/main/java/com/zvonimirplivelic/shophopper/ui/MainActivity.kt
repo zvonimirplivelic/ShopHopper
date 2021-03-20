@@ -8,8 +8,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.zvonimirplivelic.shophopper.R
 import com.zvonimirplivelic.shophopper.db.ShopDatabase
 import com.zvonimirplivelic.shophopper.db.model.ShopItem
-import com.zvonimirplivelic.shophopper.other.ShopItemAdapter
 import com.zvonimirplivelic.shophopper.repository.ShopRepository
+import com.zvonimirplivelic.shophopper.ui.dialog.AddDialogListener
+import com.zvonimirplivelic.shophopper.ui.dialog.AddShopItemDialog
+import com.zvonimirplivelic.shophopper.ui.viewmodel.ShopListViewModel
+import com.zvonimirplivelic.shophopper.ui.viewmodel.ShopViewModelFactory
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

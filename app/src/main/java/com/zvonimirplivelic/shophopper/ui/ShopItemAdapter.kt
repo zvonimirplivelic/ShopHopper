@@ -1,4 +1,4 @@
-package com.zvonimirplivelic.shophopper.other
+package com.zvonimirplivelic.shophopper.ui
 
 import android.app.AlertDialog
 import android.content.Context
@@ -20,13 +20,13 @@ class ShopItemAdapter(
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): ShopItemAdapter.ShopItemViewHolder {
+    ): ShopItemViewHolder {
 
         val view = LayoutInflater.from(parent.context).inflate(R.layout.shop_item, parent, false)
         return ShopItemViewHolder(view)
     }
 
-    override fun onBindViewHolder(holder: ShopItemAdapter.ShopItemViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ShopItemViewHolder, position: Int) {
 
         val currentItem = shopItems[position]
         holder.itemView.tvItemName.text = context.getString(R.string.name_item_string, currentItem.name)

@@ -1,4 +1,4 @@
-package com.zvonimirplivelic.shophopper.ui
+package com.zvonimirplivelic.shophopper.ui.dialog
 
 import android.content.Context
 import android.os.Bundle

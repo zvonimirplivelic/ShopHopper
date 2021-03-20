@@ -1,4 +1,4 @@
-package com.zvonimirplivelic.shophopper.ui
+package com.zvonimirplivelic.shophopper.ui.viewmodel
 
 import androidx.lifecycle.ViewModel
 import com.zvonimirplivelic.shophopper.db.model.ShopItem
