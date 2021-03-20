@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.zvonimirplivelic.shophopper.R
 import com.zvonimirplivelic.shophopper.db.model.ShopItem
-import com.zvonimirplivelic.shophopper.ui.ShopListViewModel
+import com.zvonimirplivelic.shophopper.ui.viewmodel.ShopListViewModel
 import kotlinx.android.synthetic.main.shop_item.view.*
 
 class ShopItemAdapter(
